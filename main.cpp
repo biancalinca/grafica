@@ -230,7 +230,7 @@ void drawComplexLampPost(int x, int y) {
 	int baseHeight = 20;   // Înălțimea bazei stâlpului
 	int lightRadius = 20;  // Raza luminii
 
-	// Desenăm baza felinarului
+	//  baza felinarului
 	glColor3f(0.2f, 0.2f, 0.2f); // Gri închis pentru bază
 	glBegin(GL_QUADS);
 	glVertex2i(x - 10, y);
@@ -239,7 +239,7 @@ void drawComplexLampPost(int x, int y) {
 	glVertex2i(x - 10, y + baseHeight);
 	glEnd();
 
-	// Desenăm stâlpul felinarului
+	//  stâlpul felinarului
 	glColor3f(0.3f, 0.3f, 0.3f); // Gri pentru stâlp
 	glBegin(GL_QUADS);
 	glVertex2i(x, y + baseHeight);
@@ -249,7 +249,7 @@ void drawComplexLampPost(int x, int y) {
 	glEnd();
 
 
-	// Desenăm coroana felinarului (partea superioară unde se află lumina)
+	//  coroana felinarului (partea superioară unde se află lumina)
 	glColor3f(1.0f, 1.0f, 0.0f); // Galben pentru lumina
 	glPushMatrix();
 	glTranslatef(x + 2.5f, y + baseHeight + postHeight + 5, 0.0f);
@@ -271,7 +271,7 @@ void strada(void)
 	glVertex2i(2500, 720);
 	glEnd();
 
-	// Adăugăm linii întrerupte pe mijlocul străzii
+	//  linii întrerupte pe mijlocul străzii
 	glLineWidth(2.0); // Lățimea liniilor
 	glColor3f(1.0, 1.0, 1.0); // Culoarea liniilor (alb)
 
@@ -296,7 +296,7 @@ void strada(void)
 
 	glLineWidth(1.0); // Resetăm lățimea liniei la valoarea implicită
 
-	// Adăugăm trecerea de pietoni verticală
+	// trecerea de pietoni verticală
 	int crosswalkStartX = 2100; // Poziția de start pe axa X pentru trecerea de pietoni
 	int crosswalkWidth = 50; // Lățimea unei dungi de zebra
 	int crosswalkLineLength = 250; // Lungimea dungiilor poate fi ajustată aici
@@ -327,8 +327,8 @@ void spate(void)
 	glEnd();
 
 
-	// Începe să desenezi poligoanele pentru munți
-	glBegin(GL_TRIANGLES);  // Folosim triunghiuri pentru a simplifica munții
+	
+	glBegin(GL_TRIANGLES);  
 
 	// Definirea culorilor pentru gradient
 	float baseGreen[3] = { 0.0, 0.3, 0.0 };  // Verde închis la bază
@@ -374,7 +374,7 @@ void spate(void)
 }
 
 void addWindowFrame(int x1, int y1, int x2, int y2) {
-	glColor3fv(woodColor);  // Setează culoarea la maro deschis pentru cadrele de lemn
+	glColor3fv(woodColor);  
 	int frameWidth = 10;    // Lățimea cadrelor de lemn
 
 	// Cadru exterior
@@ -557,7 +557,7 @@ void bloc()
 	glPushMatrix();
 	glColor3f(0.9, 0.9, 0.0); // Galben auriu pentru mâner
 	glTranslatef(730, 975, 0);
-	circle(5); // Funcția circle trebuie definită pentru a desena un cerc
+	circle(5); 
 	glPopMatrix();
 
 	// Pragul ușii
@@ -633,7 +633,7 @@ void updateSun() {
 }
 
 void drawCloud(float x, float y, float scale) {
-	// Creăm nori cu mai multe cercuri pentru a oferi volum
+	
 	glColor3f(0.9f, 0.9f, 0.9f);  // Alb-gri deschis
 	glPushMatrix();
 	glTranslatef(x, y, 0);
@@ -725,13 +725,13 @@ void deseneazaScena(void)
 		drawComplexLampPost(x, 720);
 	}
 
-	// Desenăm primul copac în stânga blocului
+	// primul copac în stânga blocului
 	glPushMatrix();
 	glTranslatef(-1070, 0, 0); // Poziționează primul copac la stânga blocului
 	fancyTree(300, 30, 80);
 	glPopMatrix();
 
-	// Desenăm al doilea copac în dreapta blocului
+	//  al doilea copac în dreapta blocului
 	glPushMatrix();
 	glTranslatef(-150, 0, 0); // Poziționează al doilea copac la dreapta blocului
 	fancyTree(300, 30, 80);
